@@ -6,22 +6,20 @@ export const HomeView = () => {
 
     return (
         <div>
-
-
-            <body>
-
                 <header className="top">
                     <Welcome />
                 </header>
 
                 <main className="bottom">
-                    <h1>Hej</h1>
+                    <section className="message">
+                    <p>Find your music buddy today!</p>
+                    </section>
+
+                    <section className="buttons">
+                    <button className="login">Login</button> <button className="signup">Sign up</button> 
+                    </section>
 
                 </main>
-
-
-            </body>
-
         </div>
     )
 }
