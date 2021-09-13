@@ -1,5 +1,8 @@
 import React from 'react'
 import { Welcome } from '../../components/WelcomeMessage/Welcome'
+import {LoginView} from '../loginView/LoginView'
+import {SignUpView} from '../signupView/SignUpView'
+import {Link} from 'react-router-dom'
 import './HomeView.css'
 
 export const HomeView = () => {
@@ -16,7 +19,7 @@ export const HomeView = () => {
                     </section>
 
                     <section className="buttons">
-                    <button className="login">Login</button> <button className="signup">Sign up</button> 
+                    <Link to={"/login"} className="login">Login</Link> <Link to={"/signup"} className="signup">Sign up</Link> 
                     </section>
 
                 </main>

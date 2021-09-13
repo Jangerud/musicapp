@@ -1,0 +1,26 @@
+.top {
+  padding-bottom: 0%;
+  display: flex;
+  margin: 0 auto;
+  height: 100%;
+  background-color: #e3c268;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  text-decoration: none;
+  font-size: 5em;
+  margin-top: 0;
+  color: #1f1f1f;
+}
+
+.bottom {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0%;
+  height: 100%;
+  background-color: #1f1f1f;
+}
