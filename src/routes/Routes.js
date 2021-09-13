@@ -17,10 +17,11 @@ export const Routes = ({children}) => {
 
     return (
         <BrowserRouter>
+        {children}
             <Switch>
-                <Route exact path={'/login'} component={LoginView} />
-                <Route exact path={'/signup'} component={SignUpView} />
-                <Route exact path={'/'} component={HomeView} /> 
+                <Route exact path={RoutingPath.loginView} component={LoginView} />
+                <Route exact path={RoutingPath.signUpView} component={SignUpView} />
+                <Route exact path={RoutingPath.homeView} component={HomeView} /> 
             </Switch>
         </BrowserRouter>
     )

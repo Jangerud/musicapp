@@ -1,5 +1,5 @@
 const signUpView = "/signup";
-const homeView = "/home";
+const homeView = "/";
 const loginView = "/login";
 const profileView = "/profile";
 const usersView = "/users";
