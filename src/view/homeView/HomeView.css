@@ -1,4 +1,4 @@
-.top {
+.homeDiv .top {
   padding-bottom: 0%;
   display: flex;
   margin: 0 auto;
@@ -7,7 +7,7 @@
   justify-content: center;
 }
 
-h1 {
+.homeDiv h1 {
   text-align: center;
   text-decoration: none;
   font-size: 2em;
@@ -15,7 +15,7 @@ h1 {
   color: #e3c268;
 }
 
-.bottom {
+.homeDiv .bottom {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -25,20 +25,20 @@ h1 {
   background-color: #1f1f1f;
 }
 
-.message {
+.homeDiv .message {
   color: #e3c268;
   text-decoration: none;
   font-size: 3em;
   text-align: center;
 }
 
-.buttons {
+.homeDiv .buttons {
   margin-top: 1em;
   height: 20em;
   padding: 3em, 3em;
 }
 
-.login {
+.homeDiv .login {
   padding: 1em;
   border-radius: 50%;
   background-color: #e3c268;
@@ -46,7 +46,7 @@ h1 {
   margin-right: 2em;
 }
 
-.signup {
+.homeDiv .signup {
   padding: 1em;
   border-radius: 50%;
   background-color: #e3c268;
@@ -54,6 +54,6 @@ h1 {
   margin-left: 2em;
 }
 
-.signup .on:hover {
+.homeDiv .signup .on:hover {
   border: 2px solid #eee;
 }

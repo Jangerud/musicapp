@@ -11,22 +11,24 @@ export const LoginView = () => {
     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext);
 
     return (
-        <div>
+        <div className="login">
              <header className="top">
                     <Welcome />
                 </header>
 
                 <main className="bottom">
-                    <section className="message">
-                    <h1>Login</h1>
-                    <p>Username: {username}</p> <input placeholder="Enter username" onChange={(event) => setUsername(event.target.value)}></input> <br />
-                    <p>Password:</p> <input placeholder="Enter password" onChange={(event) => setPassword(event.target.value)}></input> <br />
                     
-                    </section>
+                    <h1>Login</h1>
+                    <p className="p1">Username: {username}</p> <input className="usernameInput" placeholder="Enter username" onChange={(event) => setUsername(event.target.value)}></input>
+                    <p className="p2">Password:</p> <input className="passwordInput" placeholder="Enter password" onChange={(event) => setPassword(event.target.value)}></input>
+                    
+                   
 
                     <section className="buttons">
-                    <Link to={"/users"} className="login">Login</Link>
+                    <Link to={"/users"} className="loginButton">Login</Link>
                     </section>
+
+                    
 
                 </main>
         </div>

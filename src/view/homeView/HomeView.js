@@ -8,7 +8,7 @@ import './HomeView.css'
 export const HomeView = () => {
 
     return (
-        <div>
+        <div className="homeDiv">
                 <header className="top">
                     <Welcome />
                 </header>
