@@ -1,4 +1,4 @@
-import { DesktopNavigation } from "./DesktopNavigation"
+import { DesktopNavigation } from "./DesktopNavigation/DesktopNavigation"
 
 export const Navigation = () => {
     return (

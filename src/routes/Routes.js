@@ -16,7 +16,7 @@ export const Routes = ({children}) => {
 // }
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/musicapp">
         {children}
             <Switch>
                 <Route exact path={RoutingPath.loginView} component={LoginView} />
