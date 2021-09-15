@@ -1,12 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import RoutingPath from '../../../routes/RoutingPath'
 
 export const DesktopNavigation = () => {
     return (
-        <div>
-            <Link to="/">Home</Link>
-            <Link to ="/login">Login</Link>
-            <Link to="/signup">Sign Up</Link>
+        <div className="deskDiv">
+            <section className="navbar">
+            <Link to={RoutingPath.homeView}>Home</Link>
+            <Link to ={RoutingPath.loginView}>Login</Link>
+            <Link to={RoutingPath.signUpView}>Sign Up</Link>
+            </section>
         </div>
     )
 }

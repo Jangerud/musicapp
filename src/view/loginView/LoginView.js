@@ -4,6 +4,7 @@ import './LoginView.css'
 import {Link} from 'react-router-dom'
 import { useState, useContext } from 'react'
 import { UserContext } from '../../shared/provider/UserProvider'
+import RoutingPath from '../../routes/RoutingPath'
 
 export const LoginView = () => {
     const [username, setUsername] = useState("Johan")
@@ -25,7 +26,7 @@ export const LoginView = () => {
                    
 
                     <section className="buttons">
-                    <Link to={"/users"} className="loginButton">Login</Link>
+                    <Link to={RoutingPath.homeView} className="loginButton">Login</Link>
                     </section>
 
                     
