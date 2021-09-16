@@ -1,3 +1,7 @@
+.homeDiv {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .homeDiv .top {
   padding-bottom: 0%;
   display: flex;
