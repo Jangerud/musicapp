@@ -1,4 +1,26 @@
-.deskDiv .navbar {
+.deskDiv .deskNavbar {
   background-color: #e3c268;
   text-decoration: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2em 1fr 3fr 1fr 2em;
+  justify-content: center;
+  padding: 0.25em 0;
+}
+
+.deskDiv .navbar__logo {
+  justify-self: start;
+  align-self: end;
+  margin: 0;
+  grid-column: 2;
+}
+
+.deskDiv .navbar__list--desktop {
+  justify-self: center;
+  grid-column: 3;
+  display: flex;
+  list-style: none;
+  gap: 1em;
+  padding: 0;
+  margin: 0;
 }
