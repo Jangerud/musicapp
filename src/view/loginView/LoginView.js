@@ -7,12 +7,13 @@ import RoutingPath from '../../routes/RoutingPath'
 import { UserContext } from '../../shared/provider/UserProvider'
 
 export const LoginView = () => {
-    const [username, setUsername] = useState("Johan");
+    const [username, setUsername] = useState(null);
     const [password, setPassword] = useState();
     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext);
     
     const login = () => {
-        setAuthenticatedUser(username)
+        setAuthenticatedUser(username);
+        localStorage.setItem("username", username);
     };
 
     return (

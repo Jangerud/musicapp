@@ -23,5 +23,9 @@
   padding: 0;
   margin: 0;
   font-size: 1.5em;
-  text-decoration: none;
+}
+
+.deskDiv .navbar__login--desktop {
+  justify-self: end;
+  grid-column: -3;
 }

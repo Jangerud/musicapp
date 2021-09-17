@@ -9,9 +9,9 @@ import { UserContext } from '../../../shared/provider/UserProvider.js'
 export const DesktopNavigation = () => {
     const [authenticatedUser, setAuthenticatedUser] = useContext(UserContext);
     const renderLogin = () => {
-        if (authenticatedUser) return <span>{authenticatedUser}</span>;
+        if (authenticatedUser) return <span className="navbar__login--desktop">{authenticatedUser}</span>;
         return (
-            <Link to ={RoutingPath.loginView}>Login</Link>
+            <Link to ={RoutingPath.loginView} className="navbar__login--desktop">Login</Link>
         );
            
         
