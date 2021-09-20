@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 import { useState, useContext } from 'react'
 import RoutingPath from '../../routes/RoutingPath'
 import { UserContext } from '../../shared/provider/UserProvider'
+import LocalStorage from '../../shared/storage/LocalStorage'
 
 export const LoginView = () => {
     const [username, setUsername] = useState(null);
@@ -13,7 +14,7 @@ export const LoginView = () => {
     
     const login = () => {
         setAuthenticatedUser(username);
-        localStorage.setItem("username", username);
+        localStorage.setItem(LocalStorage.username, username);
     };
 
     return (
