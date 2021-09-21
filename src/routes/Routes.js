@@ -27,10 +27,11 @@ useEffect(() => {
         {children}
             <Switch>
                 <Route exact path={RoutingPath.loginView} component={LoginView} />
-                <Route exact path={RoutingPath.signUpView} component={SignUpView} />
-                <Route exact path={RoutingPath.homeView} component={HomeView} /> 
+                <Route exact path={RoutingPath.signUpView} component={SignUpView} /> 
                 <Route exact path={RoutingPath.usersView} component={UsersView} /> 
                 <Route exact path={RoutingPath.profileView} component={ProfileView} />
+                <Route exact path={RoutingPath.homeView} component={HomeView} />
+                <Route component={HomeView} />
             </Switch>
         </BrowserRouter>
     )
