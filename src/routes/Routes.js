@@ -22,14 +22,24 @@ useEffect(() => {
     isUserAuthenticated();
 }, []);
 
+const blockIfAuthenticated = (view) => {
+    if (authenticatedUser) return HomeView;
+    else return view;
+}
+
+const authenticationRequired = (view) => {
+    if (authenticatedUser) return view;
+    else return LoginView;
+}
+
     return (
         <BrowserRouter basename="/musicapp">
         {children}
             <Switch>
-                <Route exact path={RoutingPath.loginView} component={LoginView} />
+                <Route exact path={RoutingPath.loginView} component={blockIfAuthenticated(LoginView)} />
                 <Route exact path={RoutingPath.signUpView} component={SignUpView} /> 
-                <Route exact path={RoutingPath.usersView} component={UsersView} /> 
-                <Route exact path={RoutingPath.profileView} component={ProfileView} />
+                <Route exact path={RoutingPath.usersView} component={authenticationRequired(UsersView)} /> 
+                <Route exact path={RoutingPath.profileView} component={authenticationRequired(ProfileView)} />
                 <Route exact path={RoutingPath.homeView} component={HomeView} />
                 <Route component={HomeView} />
             </Switch>
