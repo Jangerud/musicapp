@@ -1,6 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import { useState } from 'react'
+import { Welcome } from '../../components/WelcomeMessage/Welcome'
+import './ProfileView.css'
 
 export const ProfileView = () => {
     const [serverResponse, setServerResponse] = useState();
@@ -17,10 +19,19 @@ export const ProfileView = () => {
     };
 
     return (
-        <main><section>
-            <h1>This is the profile view</h1>
-            <h2>{serverResponse?.data?.name}</h2>
-            <button onClick={() => fetchData()}>Get Avatar</button>
-            </section></main>
+        <div className="profile">
+            <header className="top">
+                <Welcome />
+            </header>
+
+            <main className="bottom">
+        
+                <p className="p1">{serverResponse?.data?.name}</p> 
+    
+                <section className="buttons">
+                <button className="profileButton" onClick={() => fetchData()}>Get Avatar</button>
+                </section>
+            </main>
+        </div>
     );
 }
