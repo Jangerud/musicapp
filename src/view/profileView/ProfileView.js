@@ -1,32 +1,53 @@
 import React from 'react'
 import axios from 'axios'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Welcome } from '../../components/WelcomeMessage/Welcome'
 import './ProfileView.css'
+import PokemonAPIService from '../../shared/api/service/PokemonAPIService'
 
 export const ProfileView = () => {
     const [serverResponse, setServerResponse] = useState();
+    const [chosenPokemon, setChosenPokemon] = useState();
+    const [loading, setLoading] = useState(true);
 
+
+    useEffect(() => {
+        fetchData();
+    }, [chosenPokemon]);
+    
     const fetchData = async () => {
-        const API_URL = "https://pokeapi.co/api/v2/pokemon/1";
+        setLoading(true);
         try {
-            const response = await axios.get(API_URL);
-            setServerResponse(response);
+            const {data} = await PokemonAPIService.searchPokemon(chosenPokemon);
+            setServerResponse(data);
+            console.log(data);
+            setLoading(false);
         }
         catch (error) {
-            alert("Error recieving data from server: " + error);
+            console.log(`Error recieving data from server: ${error}`);
         }
     };
+
+    const displayData = () => {
+
+        return (
+            <div>
+                <h2>Name: {serverResponse?.name}</h2>
+            </div>
+        )
+    }
 
     return (
         <div className="profile">
             <header className="top">
-                <Welcome />
+                <input placeholder="Search for a pokemon avatar!" onChange={(event) => setChosenPokemon(event.target.value)} />
             </header>
 
             <main className="bottom">
-        
-                <p className="p1">{serverResponse?.data?.name}</p> 
+                <img src={serverResponse?.sprites?.front_default} alt="A sprite of a pokemon." />
+                <h2>Weight: {serverResponse?.weight}</h2>
+                <h3>Height: {serverResponse?.height}</h3>
+                <p className="p1">Name: {serverResponse?.name}</p>
     
                 <section className="buttons">
                 <button className="profileButton" onClick={() => fetchData()}>Get Avatar</button>
