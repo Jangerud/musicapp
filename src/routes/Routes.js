@@ -8,6 +8,7 @@ import { UserContext } from "../shared/provider/UserProvider"
 import LocalStorage from "../shared/storage/LocalStorage"
 import { UsersView } from "../view/usersView/UsersView"
 import { ProfileView } from "../view/profileView/ProfileView"
+import { PokemonView } from "../view/pokemonView/PokemonView"
 
 
 export const Routes = ({children}) => {
@@ -40,6 +41,7 @@ const authenticationRequired = (view) => {
                 <Route exact path={RoutingPath.signUpView} component={SignUpView} /> 
                 <Route exact path={RoutingPath.usersView} component={authenticationRequired(UsersView)} /> 
                 <Route exact path={RoutingPath.profileView} component={authenticationRequired(ProfileView)} />
+                <Route exact path={RoutingPath.pokemonView} component={authenticationRequired(PokemonView)} />
                 <Route exact path={RoutingPath.homeView} component={HomeView} />
                 <Route component={HomeView} />
             </Switch>

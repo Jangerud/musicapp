@@ -5,13 +5,16 @@ import { Welcome } from '../../components/WelcomeMessage/Welcome'
 import './ProfileView.css'
 import PokemonAPIService from '../../shared/api/service/PokemonAPIService'
 import { useDebounce } from '../../shared/hooks/useDebounce'
+import { useHistory } from 'react-router'
+import RoutingPath from '../../routes/RoutingPath'
 
 export const ProfileView = () => {
     const [serverResponse, setServerResponse] = useState();
     const [chosenPokemon, setChosenPokemon] = useState();
     const [loading, setLoading] = useState(true);
     const [serverData, setServerData] = useState();
-    const debounceValue = useDebounce(chosenPokemon, 1000)
+    const debounceValue = useDebounce(chosenPokemon, 1000);
+    const history = useHistory();
 
 
     useEffect(() => {
@@ -50,6 +53,7 @@ export const ProfileView = () => {
                 <p>
                     {i}. {pokemon.name}
                 </p>
+                <button onClick={() => history.push({pathname: RoutingPath.pokemonView, state: pokemon})}>More info</button>
             </div>)
         })      
     };
@@ -59,11 +63,8 @@ export const ProfileView = () => {
     return (
         <div className="profileView">
             <header className="top">
-                <input placeholder="Search for a pokemon avatar!" onChange={(event) => setChosenPokemon(event.target.value)} />
-                <button onClick={() => console.log(serverData)}>Test API call</button>
-            </header>
-            
-            <main className="bottom">
+                <input className="pokemonInputBox" placeholder="Search for a pokemon avatar!" onChange={(event) => setChosenPokemon(event.target.value)} />
+                <button className="apiButton" onClick={() => console.log(serverData)}>Test API call</button>
                 <img src={serverResponse?.sprites?.front_default} alt="A sprite of a pokemon." />
                 <h2>Weight: {serverResponse?.weight}</h2>
                 <h3>Height: {serverResponse?.height}</h3>
@@ -73,6 +74,9 @@ export const ProfileView = () => {
                 <section className="buttons">
                 <button className="profileButton" onClick={() => fetchData()}>Get Avatar</button>
                 </section>
+            </header>
+            
+            <main className="bottom">
                 {displayData()}
             </main>
         </div>
