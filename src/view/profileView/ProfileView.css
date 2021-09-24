@@ -1,6 +1,8 @@
-.profile .top {
+.profileView .top {
   padding-bottom: 0%;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   margin: 0 auto;
   height: 100%;
   width: 100%;
@@ -8,7 +10,15 @@
   justify-content: center;
 }
 
-.profile .bottom {
+.profileView h4 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  font-size: 2em;
+  color: #1f1f1f;
+}
+
+.profileView .bottom {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -19,7 +29,7 @@
   background-color: #1f1f1f;
 }
 
-.profile .p1 {
+.profileView .p1 {
   grid-column-start: 2;
   grid-column-end: 2;
   grid-row-start: 1;
@@ -30,7 +40,7 @@
   justify-self: center;
 }
 
-.profile img {
+.profileView img {
   grid-column-start: 2;
   grid-column-end: 2;
   grid-row-start: 2;
@@ -39,7 +49,7 @@
   justify-self: center;
 }
 
-.profile h2 {
+.profileView h2 {
   grid-column-start: 2;
   grid-column-end: 2;
   grid-row-start: 3;
@@ -48,7 +58,7 @@
   text-decoration: none;
   justify-self: center;
 }
-.profile h3 {
+.profileView h3 {
   grid-column-start: 2;
   grid-column-end: 2;
   grid-row-start: 3;
@@ -58,7 +68,7 @@
   justify-self: center;
 }
 
-.profile .buttons {
+.profileView .buttons {
   margin-top: 7em;
   margin-right: 0em;
   height: 0em;
@@ -69,7 +79,7 @@
   font-weight: bold;
 }
 
-.profile .profileButton {
+.profileView .profileButton {
   background-color: #e3c268;
   color: #1f1f1f;
   font-size: 1.5em;
